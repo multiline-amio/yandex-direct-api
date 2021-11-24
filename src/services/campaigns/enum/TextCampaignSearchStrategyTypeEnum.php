@@ -20,4 +20,5 @@ class TextCampaignSearchStrategyTypeEnum extends Enum
     public const WEEKLY_CLICK_PACKAGE = 'WEEKLY_CLICK_PACKAGE';
     public const SERVING_OFF = 'SERVING_OFF';
     public const PAY_FOR_CONVERSION = 'PAY_FOR_CONVERSION';
+    public const PAY_FOR_CONVERSION_CRR = 'PAY_FOR_CONVERSION_CRR';
 }

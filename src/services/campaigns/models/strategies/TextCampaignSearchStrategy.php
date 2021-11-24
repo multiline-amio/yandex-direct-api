@@ -68,6 +68,13 @@ class TextCampaignSearchStrategy extends Model implements ICallbackValidation
     public $PayForConversion;
 
     /**
+     * @var StrategyPayForConversionCrr
+     * @Assert\Valid()
+     * @Assert\Type(type="directapi\services\campaigns\models\strategies\StrategyPayForConversionCrr")
+     */
+    public $PayForConversionCrr;
+
+    /**
      * @var StrategyWeeklyClickPackageAdd
      * @Assert\Valid()
      * @Assert\Type(type="directapi\services\campaigns\models\strategies\StrategyWeeklyClickPackageAdd")
@@ -114,6 +121,11 @@ class TextCampaignSearchStrategy extends Model implements ICallbackValidation
         if ($this->BiddingStrategyType === TextCampaignSearchStrategyTypeEnum::PAY_FOR_CONVERSION && !$this->PayForConversion) {
             $context->buildViolation('Свойство PayForConversion должно быть указано, если BiddingStrategyType=PAY_FOR_CONVERSION')
                 ->atPath('PayForConversion')->addViolation();
+        }
+
+        if ($this->BiddingStrategyType === TextCampaignSearchStrategyTypeEnum::PAY_FOR_CONVERSION_CRR && !$this->PayForConversionCrr) {
+            $context->buildViolation('Свойство PayForConversionCrr должно быть указано, если BiddingStrategyType=PAY_FOR_CONVERSION_CRR')
+                ->atPath('PayForConversionCrr')->addViolation();
         }
 
         if ($this->BiddingStrategyType === TextCampaignSearchStrategyTypeEnum::WEEKLY_CLICK_PACKAGE && !$this->WeeklyClickPackage) {

@@ -52,6 +52,11 @@ class TextCampaignNetworkStrategyTypeEnum extends Enum
     public const PAY_FOR_CONVERSION = 'PAY_FOR_CONVERSION';
 
     /**
+     * « Оптимизация доли рекламных расходов», оплата за конверсии (для кампаний с типом «Текстово-графические объявления», «Динамические объявления»)
+     */
+    public const PAY_FOR_CONVERSION_CRR = 'PAY_FOR_CONVERSION_CRR';
+
+    /**
      * «Оптимизация кликов», ограничивать по пакету кликов
      */
     public const WEEKLY_CLICK_PACKAGE = 'WEEKLY_CLICK_PACKAGE';
